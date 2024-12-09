@@ -2,22 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const Fetch2 = () => {
-  const [data, setData] = useState([
-    {
-      "id": "",
-      "title": "",
-      "price": 0,
-      "description": "",
-      "category": "",
-      "image": "",
-      "rating": {
-        "rate": "",
-        "count": 0
-      }
-    }
-  ])
+  const [data, setData] = useState([]);
 
-  let [category, setCategory] = useState([])
+  const [category, setCategory] = useState([]);
+  const [jewelery, setjewelery] = useState([]);
   useEffect(() => {
     // fetch("https://fakestoreapi.com/products")
     //   .then((res) => res.json())
@@ -25,25 +13,33 @@ const Fetch2 = () => {
     //     setData(json); // Wrap the fetched object in an array to keep data consistent
     //   })
 
-
-      axios .get("https://fakestoreapi.com/products")
-      .then((response) =>{
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((response) => {
         setData(response.data);
         console.log(response.data);
       })
       .catch((error) => {
         console.error(error);
-        });
+      });
 
-
-      axios .get("https://fakestoreapi.com/products/categories")
-      .then((response) =>{
-       setCategory(response.data)
+    axios
+      .get("https://fakestoreapi.com/products/categories")
+      .then((response) => {
+        setCategory(response.data);
       })
       .catch((err) => {
         console.error(err);
-        });
-    
+      });
+
+    axios
+      .get("https://fakestoreapi.com/products/category/jewelery")
+      .then((response) => {
+        setjewelery(response.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
 
   return (
@@ -59,9 +55,7 @@ const Fetch2 = () => {
         );
       })}
 
-      {category.map((ele)=>{
-        return <p key={ele}>{ele}</p>
-      })}
+     
     </div>
   );
 };
