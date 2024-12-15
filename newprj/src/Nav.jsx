@@ -6,7 +6,7 @@ const Nav = () => {
     return (
             <div className='nav-link  nav-list' >
                 
-                <img src=" " alt="Tekisky Logo" className="logo" />
+                <img src=" " alt=" Logo" className="logo" />
                             <Link to="/" >Home</Link>
                            <Link to="/services">Services</Link>
                             <Link to="/contact" >Contact</Link>
