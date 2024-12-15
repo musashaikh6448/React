@@ -1,0 +1,25 @@
+/* Nav.css */
+.nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: 10px;
+    background: url('/background-pattern.png') no-repeat center center; /* Matches the circuit-like background */
+    background-size: cover;
+    border-bottom: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+}
+
+.nav-link {
+    color: #333; /* Neutral color */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #007bff; /* Highlight on hover */
+    border-bottom: 2px solid #007bff;
+}

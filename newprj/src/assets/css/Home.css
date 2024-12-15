@@ -1,0 +1,56 @@
+.home-container {
+    font-family: Arial, sans-serif;
+    background: url('/background-pattern.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    text-align: center;
+    padding: 50px;
+}
+
+/* .home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+} */
+
+.logo {
+    width: 150px;
+}
+
+/* .home-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+} */
+
+/* .nav-item {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+} */
+
+.home-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    font-size: 1.2em;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.contact-button {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.contact-button:hover {
+    background: #0056b3;
+}
