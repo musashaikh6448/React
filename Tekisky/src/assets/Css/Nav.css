@@ -1,0 +1,27 @@
+/* Nav.css */
+div {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #5b5a5a;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  
+  div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  div a:hover {
+    color: #00bcd4;
+    transform: scale(1.1);
+  }
+  
+  div a:active {
+    color: #ff5722;
+  }
+  
