@@ -1,18 +1,34 @@
-import "./App.css"
-import { useState } from "react"
+import "./App.css";
+import { useState } from "react";
+import About from "./components/About";
+import Home from "./components/Home";
+import Login from "./components/Login";
 
 const App = () => {
-  const [count , setcount]= useState(0)
-  
+  const [component, setComponent] = useState("home");
+
+  const handleRenderComponent = () => {
+    switch (component) {
+      case "home":
+        return <Home />;
+
+      case "about":
+        return <About />;
+
+      case "login":
+        return <Login />;
+    }
+  };
+
   return (
     <>
-    <button onClick={()=> setcount(count+1)}>incriment</button>
-    <h1>{count}</h1>
-    <button onClick={()=> setcount(count-1)}>decriment</button>
-   
+      <button onClick={() => setComponent("home")}> Home</button>
+      <button onClick={() => setComponent("about")}> about</button>
+      <button onClick={() => setComponent("login")}> login</button>
 
+      {handleRenderComponent()}
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
