@@ -1,155 +1,95 @@
-// import { useState } from "react";
-// import { toast, ToastContainer } from "react-toastify";
-
-// const App = () => {
-//   const [data, setData] = useState("");
-//   const [massage, setMaggage] = useState("");
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log(data);
-//     setData("");
-
-//     setMaggage(data);
-
-//     toast.success(`Hello ${massage}`);
-//   };
-
-//   return (
-//     <div className="container mt-5 flex border p-5">
-//       <form onSubmit={handleSubmit}>
-//         <input
-//           type="text"
-//           placeholder="Enter Your Name"
-//           className="form-control"
-//           onChange={(e) => setData(e.target.value)}
-//           value={data}
-//         />
-//         <button className="btn btn-success mt-5 "> Submit</button>
-//       </form>
-
-//       <ToastContainer
-//         position="top-right"
-//         autoClose={5000}
-//         hideProgressBar={false}
-//         newestOnTop={false}
-//         closeOnClick={false}
-//         rtl={false}
-//         pauseOnFocusLoss
-//         draggable
-//         pauseOnHover
-//         theme="dark"
-//       />
-//       <h1>{massage}</h1>
-//     </div>
-//   );
-// };
-
-
-// export default App;
-
-
-
-// *************************************************
-
-// import { useState } from "react";
-
-// const App = () => {
-//   const [username, setUsername] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [message, setMessage] = useState("");
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-    
-//     // Hardcoded login credentials
-//     if (username === "shaikh" && password === "shaikh") {
-//       setMessage("Login Successful ✅");
-//     } else {
-//       setMessage("Invalid Login ❌");
-//     }
-
-//     // Clear input fields after submission
-//     setUsername("");
-//     setPassword("");
-//   };
-
-//   return (
-//     <div className="container mt-5 flex border p-5">
-//       <form onSubmit={handleSubmit}>
-//         <input
-//           type="text"
-//           placeholder="Enter Username"
-//           className="form-control mb-3"
-//           value={username}
-//           onChange={(e) => setUsername(e.target.value)}
-//         />
-//         <input
-//           type="password"
-//           placeholder="Enter Password"
-//           className="form-control mb-3"
-//           value={password}
-//           onChange={(e) => setPassword(e.target.value)}
-//         />
-//         <button className="btn btn-success mt-3">Login</button>
-//       </form>
-
-//       {/* Display login message */}
-//       {message && <h2 className="mt-3">{message}</h2>}
-//     </div>
-//   );
-// };
-
-// export default App;
-
-
-
-// *******************************************************
-import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import  { useState } from "react";
+import { Card } from "react-bootstrap";
+import { toast, ToastContainer } from "react-toastify";
+ 
 
 const App = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState(""); // State for username
+  const [email, setEmail] = useState("");       // State for email
+  const [password, setPassword] = useState(""); // State for password
+  const [number, setNumber] = useState("");     // State for phone number
+  const [message, setMessage] = useState("");   // State for success message
 
+  // Handle form submit (save data and show success message)
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent page reload on form submit
+    
+    // Save data to localStorage
+    localStorage.setItem("username", username);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+    localStorage.setItem("number", number);
+    
+    // Show success message
+    setMessage("Account Created Successfully! ✅");
 
-    if (username === "shaikh" && password === "shaikh") {
-      toast.success("Login Successful ✅");
-    } else {
-      toast.error("Invalid Login ❌");
-    }
+    toast.success("Account created successfully")
 
+    // Clear form inputs
     setUsername("");
+    setEmail("");
     setPassword("");
+    setNumber("");
   };
 
+  // Get the user data from localStorage (so it's available even after page refresh)
+  const savedUsername = localStorage.getItem("username");
+  const savedEmail = localStorage.getItem("email");
+  const savedPassword = localStorage.getItem("password");
+  const savedNumber = localStorage.getItem("number");
+
   return (
-    <div className="container mt-5 flex border p-5">
+    <div className="container mt-4">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Enter Username"
           className="form-control mb-3"
-          value={username}
           onChange={(e) => setUsername(e.target.value)}
+          value={username}
+        />
+        <input
+          type="email"
+          placeholder="Enter Email"
+          className="form-control mb-3"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
         />
         <input
           type="password"
           placeholder="Enter Password"
           className="form-control mb-3"
-          value={password}
           onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+        <input
+          type="tel"
+          placeholder="Enter Phone No"
+          className="form-control mb-3"
+          onChange={(e) => setNumber(e.target.value)}
+          value={number}
         />
         <button className="btn btn-success mt-3">Login</button>
       </form>
 
-      {/* Toast Notification Container */}
-      <ToastContainer position="top-center" autoClose={2000} />
+      {/* Card to display user details */}
+      <Card style={{ width: "18rem", marginTop: "20px" }}>
+        <Card.Body>
+          <h5>User Details</h5>
+          <h6>Username:{savedUsername}</h6>
+          <h6>Email: {savedEmail}</h6>
+          <h6>Password: {savedPassword}</h6>
+          <h6>Phone: {savedNumber}</h6>
+        </Card.Body>
+      </Card>
+
+      {/* Success message */}
+      <h1>{message}</h1>
+
+
+      <ToastContainer />
     </div>
   );
 };
 
-export default App;
+export default App; 
