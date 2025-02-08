@@ -1,9 +1,9 @@
-import  Form  from "./Form"
+import Props from "./Props"
 
 const App = () => {
   return (
-    <div><Form/>
-
+    <div>
+<Props/>
       
     </div>
   )
