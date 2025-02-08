@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-const App = () => {
+
+const button = () => {
   const [count, setcount] = useState(0);
 
   return (
@@ -10,4 +11,6 @@ const App = () => {
       <button onClick={() => setcount(count - 1)}>decriment</button>
     </>
   );
-};
+}
+
+export default button
