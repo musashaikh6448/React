@@ -1,36 +1,16 @@
-import { useState } from "react";
-import Login from "./components/Login";
-import Home from "./components/Home";
-import About from "./components/About";
-import '../assets/css/navbar.css'
+import { Link } from "react-router-dom"
 
-const Navbar = () => {
-  
+const NavBar = () => {
+  return (
+    <>
+   
 
-    const [component, setComponent] = useState("home");
-  
-    const handleRenderComponent = () => {
-      switch (component) {
-        case "home":
-          return <Home />;
-  
-        case "about":
-          return <About />;
-  
-        case "login":
-          return <Login />;
-      }
-    };
-  
-    return (
-      <>
-        <button onClick={() => setComponent("home")}> Home</button>
-        <button onClick={() => setComponent("about")}> about</button>
-        <button onClick={() => setComponent("login")}> login</button>
-  
-        {handleRenderComponent()}
-      </>
-    );
+    <Link to='/'></Link>
+        <Link to='/home'>home</Link> <br/>
+        <Link to='/contactus'>contact us</Link><br/>
+        <Link to='/aboutus'>about us</Link>
+    </>
+  )
 }
 
-export default Navbar
+export default NavBar
