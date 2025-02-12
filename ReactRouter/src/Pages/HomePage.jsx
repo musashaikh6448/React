@@ -1,11 +1,12 @@
+import ProductCards from '../Components/ProductCard'
 
 const HomePage = () => {
   return (
-    <div className="slider-container">
+    <>
+      <div className="slider-container"></div>
+      <ProductCards/>
+    </>
+  );
+};
 
-
-    </div>
-  )
-}
-
-export default HomePage
+export default HomePage;
