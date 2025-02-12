@@ -1,0 +1,46 @@
+.slider-container {
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: BgAnimation 10s linear infinite;
+}
+
+@keyframes BgAnimation {
+  0% {
+    background-image: url("https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/M5-2025/11821/1719462197562/front-left-side-47.jpg?impolicy=resize&imwidth=480");
+  }
+  20% {
+    background-image: url("https://stimg.cardekho.com/images/carexteriorimages/630x420/Skoda/Kylaq/11528/1733225175669/front-left-side-47.jpg?impolicy=resize&imwidth=480");
+  }
+  40% {
+    background-image: url("https://mclaren.scene7.com/is/image/mclaren/07_GT_Front_34_Dynamic-1:crop-16x9?wid=1920&hei=1080");
+  }
+  60% {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWtyoKr8-EgU3I8xH4GlEJiPOqPszxHJLWcw&s");
+  }
+  80% {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/002/083/833/non_2x/red-car-illustration-free-vector.jpg");
+  }
+  100% {
+    background-image: url("https://img.freepik.com/free-photo/luxurious-car-parked-highway-with-illuminated-headlight-sunset_181624-60607.jpg");
+  }
+}
+
+
+
+.card-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card-container .card{
+    width: 300px;
+    margin: 20px 0;
+}
+
+.card img{
+    width: 100%;
+}
