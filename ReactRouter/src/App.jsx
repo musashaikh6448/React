@@ -7,6 +7,7 @@ import Login from "./Pages/Login";
 import PageNotFound from "./Pages/PageNotFound";
 import NavBar from "./Components/NavBar";
 
+
 const App = () => {
   const location = useLocation();
 
