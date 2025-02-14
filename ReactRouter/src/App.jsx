@@ -6,6 +6,8 @@ import AboutUs from "./Pages/AboutUs";
 import Login from "./Pages/Login";
 import PageNotFound from "./Pages/PageNotFound";
 import NavBar from "./Components/NavBar";
+import Btn from "./Components/btn";
+import UserName from "./Pages/UserName";
 
 
 const App = () => {
@@ -22,8 +24,12 @@ const App = () => {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/user/:name" element={<UserName />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+
+
+      {/* <Btn/> */}
     </div>
   );
 };

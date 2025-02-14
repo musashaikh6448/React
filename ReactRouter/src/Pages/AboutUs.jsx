@@ -21,6 +21,7 @@ const styles = {
     maxWidth: '800px',
     margin: '0 auto',
     textAlign: 'center',
+    
   },
   heading: {
     fontSize: '2rem',
